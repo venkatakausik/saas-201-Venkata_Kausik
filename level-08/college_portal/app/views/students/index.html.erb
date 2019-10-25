@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-10">
+    <h2>Students</h2>
+  </div>
+ <% if current_user.admin? %>
+  <div class="col-md-2">
+    <a class="btn btn-primary float-right" href="<%= new_student_path %>" role="button">Create</a>
+  </div>
+ <% end %>
+</div>
+
+<br/>
+
+<ul class="list-group">
+  <% @students.each do |student| %>
+    <li class="list-group-item"><a href="<%= student_path(id: student.id) %>"><%= student.name %></a></li>
+  <% end %>
+</ul>
+
