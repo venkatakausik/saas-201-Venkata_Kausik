@@ -1,0 +1,16 @@
+<h2>Create Students</h2>
+
+<%= form_for(@student) do |f| %>
+  <div class="form-group">
+    <label>Name</label>
+    <%= f.text_field :name, class: "form-control", placeholder: "Student Name", required: true%>
+    <br/>
+    <label>Department</label>
+    <%= f.select :department_id, @department_collection, { prompt: 'Select Department' }, class: "form-control", required: true%>
+    <br/>
+    <label>Section</label>
+    <%= f.select :section_id, @section_collection, { prompt: 'Select Section' }, class: "form-control", required: true%>
+    <br/>
+    <%= f.submit text: "create", class: "btn btn-primary"%>
+  </div>
+<% end %>
